@@ -94,15 +94,11 @@ EOF
     print_box_header "CONTROL PANEL" $NEON_PURPLE
     print_menu_option "1" "Install Pterodactyl Panel"
     print_menu_option "2" "Install Pterodactyl Wings"
-    print_menu_option "3" "Update Pterodactl Panel"
-    print_menu_option "4" "Uninstall Panel,Wings"
-    print_menu_option "5" "Install Blueprint"
-    print_menu_option "6" "Install Cloudflare"
-    print_menu_option "7" "Change Pterodactyl Theme"
-    print_menu_option "8" "Install Tailscale"
-    print_menu_option "9" "Install HvmPanel3.1"
+    print_menu_option "3" "Install Tailscale"
+    print_menu_option "4" "Install HvmPanel3.1"
+    print_menu_option "5" "Exit"
     echo -e "\n${DANGER}══════════════════════════════════════════════════════════${RESET}"
-    read -p $'\e[93m\e[1m Select option [0-10]: \e[0m' choice
+    read -p $'\e[93m\e[1m Select option [1-5]: \e[0m' choice
 }
-    esac
+esac
 done
