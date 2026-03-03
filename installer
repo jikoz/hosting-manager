@@ -104,3 +104,5 @@ show_menu() {
     echo -e "\n${DANGER}══════════════════════════════════════════════════════════${RESET}"
     read -p $'\e[93m\e[1m Select option [0-10]: \e[0m' choice
 }
+    esac
+done
