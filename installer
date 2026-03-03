@@ -30,9 +30,9 @@ EOF
 echo ""
 echo "${BLUE}${BOLD} 1) Install Pterodactyl Panel ${RESET}"
 echo "${BLUE}${BOLD} 2) Install Pterodactyl Wings ${RESET}"
-echo "${BLUE}${BOLD} 4) Install Tailscale+UP ${RESET}"
-echo "${BLUE}${BOLD} 5) Install HvmPamel ${RESET}"
-echo "${BLUE}${BOLD} 6) EXIT ${RESET}"
+echo "${BLUE}${BOLD} 3) Install Tailscale+UP ${RESET}"
+echo "${BLUE}${BOLD} 4) Install HvmPamel ${RESET}"
+echo "${BLUE}${BOLD} 5) EXIT ${RESET}"
 echo ""
 read -p "Select option [1-6]: " opt
 
