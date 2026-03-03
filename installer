@@ -103,5 +103,4 @@ show_menu() {
     print_menu_option "9" "Install HvmPanel3.1"
     echo -e "\n${DANGER}══════════════════════════════════════════════════════════${RESET}"
     read -p $'\e[93m\e[1m Select option [0-10]: \e[0m' choice
-    echo
 }
