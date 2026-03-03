@@ -89,7 +89,7 @@ show_menu() {
  _  | | | | | | ' /| | | | / / 
 | |_| | | |_| | . \| |_| |/ /_ 
  \___/|_|\___/|_|\_\\___//____|
- EOF
+EOF
      echo -e "${NEON_PURPLE}${BOLD} PTERODACTYL HOSTING MANAGER${RESET}\n"
     print_box_header "CONTROL PANEL" $NEON_PURPLE
     print_menu_option "1" "Install Pterodactyl Panel"
