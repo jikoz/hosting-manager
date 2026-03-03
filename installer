@@ -18,100 +18,90 @@ DANGER="\e[38;5;75m"
 GLOW="\e[38;5;51m"
 DANGER="\e[38;5;196m"
 clear
-# Welcome Banner
-welcome_banner() {
-    clear
-    echo -e "${DANGER}"
-    cat << "EOF"
-  ______  _  __ ___  ____ _ _
-    | | |/ _ \| |/ // _ \|_  /
- _  | | | | | | ' /| | | | / / 
-| |_| | | |_| | . \| |_| |/ /_ 
- \___/|_|\___/|_|\_\\___//____|
- EOF
-     echo -e "${NEON_PURPLE}${BOLD} JIKOZ HOSTING MANAGER${RESET}"
-     echo -e "${DIM} SCRIPT OWNER: ${BOLD}JIKOZYT${RESET} ${DIM}${RESET}"
-         sleep 1
-}
-# Functions
-progress() { echo -e "${NEON_GREEN}${BOLD}➤ $1${RESET}"; }
-success() { echo -e "${GREEN}${BOLD}✓ $1${RESET}"; }
-warning() { echo -e "${YELLOW}${BOLD}! $1${RESET}"; }
-error() { echo -e "${RED}${BOLD}✘ $1${RESET}"; }
-print_box_header() {
-    local text="$1"
-    local color="${2:-$NEON_PURPLE}"
-    echo -e "${color}${BOLD}╔══════════════════════════════════════════════════════════╗${RESET}"
-    echo -e "${color}${BOLD}║${RESET} ${WHITE}${BOLD}$text$(printf '%*s' $((58 - ${#text})) '') ${color}${BOLD}║${RESET}"
-    echo -e "${color}${BOLD}╚══════════════════════════════════════════════════════════╝${RESET}\n"
-}
-print_menu_option() {
-    local num="$1"
-    local text="$2"
-    echo -e "${DANGER} ┌──────────────────────────────────────────────────────┐${RESET}"
-    echo -e "${DANGER} │${RESET} ${WHITE}${BOLD}[${NEON_GREEN}${num}${WHITE}]${RESET} ${CYAN}${text}$(printf '%*s' $((48 - ${#text} - 3)) '') ${DANGER}│${RESET}"
-    echo -e "${DANGER} └──────────────────────────────────────────────────────┘${RESET}"
-}
-# Script Runner
-run_remote_script() {
-    local url="$1"
-    local name="$2"
-    clear
-    echo -e "${NEON_PURPLE}"
-    cat << "EOF"
- ______  _  __ ___  ____ _ _
-    | | |/ _ \| |/ // _ \|_  /
- _  | | | | | | ' /| | | | / / 
-| |_| | | |_| | . \| |_| |/ /_ 
- \___/|_|\___/|_|\_\\___//____|
- EOF
-     print_box_header "$name" $NEON_PURPLE
-    progress "Downloading and executing remote script..."
-    local temp_script=$(mktemp)
-    if curl -fsSL "$url" -o "$temp_script"; then
-        chmod +x "$temp_script"
-        bash "$temp_script"
-        rm -f "$temp_script"
-        success "$name completed!"
-    else
-        error "Failed to download script from $url"
-    fi
-    echo -e "\n${DANGER}══════════════════════════════════════════════════════════${RESET}"
-    read -p $'\e[93mPress Enter to return to menu...\e[0m' -r
-}
-# Menu
-show_menu() {
-    clear
-    echo -e "${DANGER}
-    cat << "EOF"
- ______  _  __ ___  ____ _ _
-    | | |/ _ \| |/ // _ \|_  /
- _  | | | | | | ' /| | | | / / 
-| |_| | | |_| | . \| |_| |/ /_ 
- \___/|_|\___/|_|\_\\___//____|
+cat << "EOF"
+██╗██╗██╗  ██╗ ██████╗ ███████╗██╗   ██╗████████╗
+     ██║██║██║ ██╔╝██╔═══██╗╚══███╔╝╚██╗ ██╔╝╚══██╔══╝
+     ██║██║█████╔╝ ██║   ██║  ███╔╝  ╚████╔╝    ██║   
+██   ██║██║██╔═██╗ ██║   ██║ ███╔╝    ╚██╔╝     ██║   
+╚█████╔╝██║██║  ██╗╚██████╔╝███████╗   ██║      ██║   
+ ╚════╝ ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝   ╚═╝      ╚═╝
 EOF
-     echo -e "${NEON_PURPLE}${BOLD} PTERODACTYL HOSTING MANAGER${RESET}\n"
-    print_box_header "CONTROL PANEL" $NEON_PURPLE
-    print_menu_option "1" "Install Pterodactyl Panel"
-    print_menu_option "2" "Install Pterodactyl Wings"
-    print_menu_option "3" "Install Tailscale"
-    print_menu_option "4" "Install HvmPanel3.1"
-    print_menu_option "5" "Exit"
-    echo -e "\n${DANGER}══════════════════════════════════════════════════════════${RESET}"
-    read -p $'\e[93m\e[1m Select option [1-5]: \e[0m' choice
-}
-# Welcome
-welcome_banner
-# Main Loop
-while true; do
-    show_menu
-    case $choice in
-        1) run_remote_script "https://raw.githubusercontent.com/mahimxyzz/Vps/refs/heads/main/cd/panel2.sh" "Pterodactyl Panel" ;;
-        2) run_remote_script "https://raw.githubusercontent.com/mahimxyzz/Vps/refs/heads/main/cd/wing2.sh" "Pterodactyl Wings" ;;
-        3) run_remote_script "https://raw.githubusercontent.com/mahimxyzz/Vps/refs/heads/main/cd/update2.sh" "Tailscale" ;;
-        4) run_remote_script "https://raw.githubusercontent.com/mahimxyzz/Vps/refs/heads/main/cd/uninstall2.sh" "HvmPanel" ;;
-5)
-            exit
-            ;;
-    esac
+
+echo ""
+echo "${BLUE}${BOLD} 1) Install Pterodactyl Panel ${RESET}"
+echo "${BLUE}${BOLD} 2) Install Pterodactyl Wings ${RESET}"
+echo "${BLUE}${BOLD} 4) Install Tailscale+UP ${RESET}"
+echo "${BLUE}${BOLD} 5) Install HvmPamel ${RESET}"
+echo "${BLUE}${BOLD} 6) EXIT ${RESET}"
+echo ""
+read -p "Select option [1-6]: " opt
+
+case $opt in
+  1)
+    clear
+    cat << "EOF"
+██╗██╗██╗  ██╗ ██████╗ ███████╗██╗   ██╗████████╗
+     ██║██║██║ ██╔╝██╔═══██╗╚══███╔╝╚██╗ ██╔╝╚══██╔══╝
+     ██║██║█████╔╝ ██║   ██║  ███╔╝  ╚████╔╝    ██║   
+██   ██║██║██╔═██╗ ██║   ██║ ███╔╝    ╚██╔╝     ██║   
+╚█████╔╝██║██║  ██╗╚██████╔╝███████╗   ██║      ██║   
+ ╚════╝ ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝   ╚═╝      ╚═╝
+EOF
+    exit
+    ;;
+  2)
+    clear
+    cat << "EOF"
+██╗██╗██╗  ██╗ ██████╗ ███████╗██╗   ██╗████████╗
+     ██║██║██║ ██╔╝██╔═══██╗╚══███╔╝╚██╗ ██╔╝╚══██╔══╝
+     ██║██║█████╔╝ ██║   ██║  ███╔╝  ╚████╔╝    ██║   
+██   ██║██║██╔═██╗ ██║   ██║ ███╔╝    ╚██╔╝     ██║   
+╚█████╔╝██║██║  ██╗╚██████╔╝███████╗   ██║      ██║   
+ ╚════╝ ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝   ╚═╝      ╚═╝
+EOF
+  exit
+    ;;
+  3)
+   clear
+       cat << "EOF"
+██╗██╗██╗  ██╗ ██████╗ ███████╗██╗   ██╗████████╗
+     ██║██║██║ ██╔╝██╔═══██╗╚══███╔╝╚██╗ ██╔╝╚══██╔══╝
+     ██║██║█████╔╝ ██║   ██║  ███╔╝  ╚████╔╝    ██║   
+██   ██║██║██╔═██╗ ██║   ██║ ███╔╝    ╚██╔╝     ██║   
+╚█████╔╝██║██║  ██╗╚██████╔╝███████╗   ██║      ██║   
+ ╚════╝ ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝   ╚═╝      ╚═╝
+EOF
+    curl -fsSL https://tailscale.com/install.sh | sh
+    echo "${GREEN}${BOLD} Tailscale Installed Successfully ${RESET}"
+    sleep 2
+    echo "${BLUE}${BOLD} Starting Tailscale ✨ ${RESET}"
+    sudo tailscale up
+    ;;
+  4)
+       clear
+       cat << "EOF"
+██╗██╗██╗  ██╗ ██████╗ ███████╗██╗   ██╗████████╗
+     ██║██║██║ ██╔╝██╔═══██╗╚══███╔╝╚██╗ ██╔╝╚══██╔══╝
+     ██║██║█████╔╝ ██║   ██║  ███╔╝  ╚████╔╝    ██║   
+██   ██║██║██╔═██╗ ██║   ██║ ███╔╝    ╚██╔╝     ██║   
+╚█████╔╝██║██║  ██╗╚██████╔╝███████╗   ██║      ██║   
+ ╚════╝ ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝   ╚═╝      ╚═╝
+EOF
+    sudo apt update
+    sudo apt install git -y
+    git clone https://github.com/DreamHost2ws/Vpanel3.1.git
+    sudo apt install python3-pip -y
+    cd Vpanel3.1
+    pip3 install flask flask-socketio flask_login docker paramiko python-dotenv psutil flask-limiter ecdsa
+    echo "${GREEN}${BOLD} Starting HvmPanel ${RESET}"
+    python3 hvm.py
+    ;;
+  5)
+    exit 0
+    ;;
+  *)
+    echo "❌ Invalid Option"
+    sleep 1
+    ;;
+esac
 done
