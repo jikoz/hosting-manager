@@ -32,7 +32,7 @@ echo -e "${CYAN}3${RESET} ➤ Install Tailscale+UP"
 echo -e "${CYAN}4${RESET} ➤ Install HvmPanel"
 echo -e "${CYAN}5${RESET} ➤ Exit"
 echo ""
-read -p "Select option [1-5]: " opt
+read -p "Select option [1-5] ➜" opt
 
 case $opt in
   1) bash <(curl -s https://raw.githubusercontent.com/jikoz/codes/refs/heads/main/script) ;;    
