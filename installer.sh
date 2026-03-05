@@ -35,7 +35,8 @@ echo -e "${CYAN}6${RESET} ➤ Install Rdp"
 echo -e "${CYAN}7${RESET} ➤ One Click Playit Installer"
 echo -e "${CYAN}8${RESET} ➤ Install Localtonet"
 echo -e "${CYAN}9${RESET} ➤ Install Proxmox Panel"
-echo -e "${CYAN}10${RESET} ➤ Exit"
+echo -e "${CYAN}10${RESET} ➤ Transform Pterodactyl Into Jexactyl Panel"
+echo -e "${CYAN}11${RESET} ➤ Exit"
 echo ""
 read -p "Select option [1-9] ➜ " opt
 
@@ -49,7 +50,8 @@ case $opt in
   7) clear && bash <(curl -s https://raw.githubusercontent.com/jikoz/codes/refs/heads/main/playit.sh) ;;
   8) clear && bash <(curl -s https://raw.githubusercontent.com/jikoz/codes/refs/heads/main/localtonet.sh) ;;
   9) clear && bash <(curl -s https://raw.githubusercontent.com/jikoz/codes/refs/heads/main/proxmox.sh) ;;
-  10) exit 0 ;;
+  10) clear && bash <(curl -s https://raw.githubusercontent.com/jikoz/codes/refs/heads/main/jexactyl.sh) ;;
+  11) exit 0 ;;
   *) echo "❌ Invalid Option"
      sleep 1
     ;;
