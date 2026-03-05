@@ -34,7 +34,7 @@ echo -e "${CYAN}5${RESET} ➤ Install Cloudflare"
 echo -e "${CYAN}6${RESET} ➤ Install Rdp"
 echo -e "${CYAN}7${RESET} ➤ Exit"
 echo ""
-read -p "Select option [1-5] ➜" opt
+read -p "Select option [1-7] ➜ " opt
 
 case $opt in
   1) bash <(curl -s https://raw.githubusercontent.com/jikoz/codes/refs/heads/main/script) ;;    
