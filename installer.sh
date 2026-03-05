@@ -38,7 +38,7 @@ echo -e "${CYAN}9${RESET} ➤ Install Proxmox Panel"
 echo -e "${CYAN}10${RESET} ➤ Transform Pterodactyl Into Jexactyl Panel"
 echo -e "${CYAN}11${RESET} ➤ Exit"
 echo ""
-read -p "Select option [1-9] ➜ " opt
+read -p "Select option [1-11] ➜ " opt
 
 case $opt in
   1) clear && bash <(curl -s https://raw.githubusercontent.com/jikoz/codes/refs/heads/main/script) ;;    
