@@ -31,7 +31,7 @@ echo -e "${CYAN}2${RESET} ➤ Install Pterodactyl Wings"
 echo -e "${CYAN}3${RESET} ➤ Install Tailscale+UP"
 echo -e "${CYAN}4${RESET} ➤ Install HvmPanel"
 echo -e "${CYAN}5${RESET} ➤ Install Cloudflare"
-echo -e "${CYAN}6${RESET} ➤ Install Rdp Installer"
+echo -e "${CYAN}6${RESET} ➤ Install Rdp"
 echo -e "${CYAN}7${RESET} ➤ Exit"
 echo ""
 read -p "Select option [1-5] ➜" opt
