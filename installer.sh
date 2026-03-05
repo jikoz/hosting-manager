@@ -20,70 +20,27 @@ cat << "EOF"
 ╚█████╔╝██║██║  ██╗╚██████╔╝███████╗   ██║      ██║   
  ╚════╝ ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝   ╚═╝      ╚═╝
 EOF
-
+echo "╔══════════════════╗"
+echo "║CODE MADE BY JIKOZYT ║"
+echo "╚══════════════════╝"
+sleep 2
+# Options
 echo ""
 echo -e "${CYAN}1${RESET} ➤ Install Pterodactyl Panel"
 echo -e "${CYAN}2${RESET} ➤ Install Pterodactyl Wings"
 echo -e "${CYAN}3${RESET} ➤ Install Tailscale+UP"
-echo -e "${CYAN}4${RESET} ➤ Install HvmPamel"
+echo -e "${CYAN}4${RESET} ➤ Install HvmPanel"
 echo -e "${CYAN}5${RESET} ➤ Exit"
 echo ""
-read -p "Select option [1-6]: " opt
+read -p "Select option [1-5]: " opt
 
 case $opt in
   1) bash <(curl -s https://raw.githubusercontent.com/jikoz/codes/refs/heads/main/script) ;;    
-  2)
-    clear
-    cat << "EOF"
-██╗██╗██╗  ██╗ ██████╗ ███████╗██╗   ██╗████████╗
-     ██║██║██║ ██╔╝██╔═══██╗╚══███╔╝╚██╗ ██╔╝╚══██╔══╝
-     ██║██║█████╔╝ ██║   ██║  ███╔╝  ╚████╔╝    ██║   
-██   ██║██║██╔═██╗ ██║   ██║ ███╔╝    ╚██╔╝     ██║   
-╚█████╔╝██║██║  ██╗╚██████╔╝███████╗   ██║      ██║   
- ╚════╝ ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝   ╚═╝      ╚═╝
-EOF
-  exit
-    ;;
-  3)
-   clear
-       cat << "EOF"
-██╗██╗██╗  ██╗ ██████╗ ███████╗██╗   ██╗████████╗
-     ██║██║██║ ██╔╝██╔═══██╗╚══███╔╝╚██╗ ██╔╝╚══██╔══╝
-     ██║██║█████╔╝ ██║   ██║  ███╔╝  ╚████╔╝    ██║   
-██   ██║██║██╔═██╗ ██║   ██║ ███╔╝    ╚██╔╝     ██║   
-╚█████╔╝██║██║  ██╗╚██████╔╝███████╗   ██║      ██║   
- ╚════╝ ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝   ╚═╝      ╚═╝
-EOF
-    curl -fsSL https://tailscale.com/install.sh | sh
-    echo "${GREEN}${BOLD} Tailscale Installed Successfully ${RESET}"
-    sleep 2
-    echo "${BLUE}${BOLD} Starting Tailscale ✨ ${RESET}"
-    sudo tailscale up
-    ;;
-  4)
-       clear
-       cat << "EOF"
-██╗██╗██╗  ██╗ ██████╗ ███████╗██╗   ██╗████████╗
-     ██║██║██║ ██╔╝██╔═══██╗╚══███╔╝╚██╗ ██╔╝╚══██╔══╝
-     ██║██║█████╔╝ ██║   ██║  ███╔╝  ╚████╔╝    ██║   
-██   ██║██║██╔═██╗ ██║   ██║ ███╔╝    ╚██╔╝     ██║   
-╚█████╔╝██║██║  ██╗╚██████╔╝███████╗   ██║      ██║   
- ╚════╝ ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝   ╚═╝      ╚═╝
-EOF
-    sudo apt update
-    sudo apt install git -y
-    git clone https://github.com/DreamHost2ws/Vpanel3.1.git
-    sudo apt install python3-pip -y
-    cd Vpanel3.1
-    pip3 install flask flask-socketio flask_login docker paramiko python-dotenv psutil flask-limiter ecdsa
-    echo "${GREEN}${BOLD} Starting HvmPanel ${RESET}"
-    python3 hvm.py
-    ;;
-  5)
-    exit 0
-    ;;
-  *)
-    echo "❌ Invalid Option"
-    sleep 1
+  2) bash <(curl -s https://raw.githubusercontent.com/jikoz/codes/refs/heads/main/wings) ;;
+  3) curl -fsSL https://tailscale.com/install.sh | sh && sudo tailscale up ;;
+  4) bash <(curl -s https://raw.githubusercontent.com/jikoz/codes/refs/heads/main/hvm.sh) ;;
+  5) exit 0 ;;
+  *) echo "❌ Invalid Option"
+     sleep 1
     ;;
 esac
