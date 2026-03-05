@@ -30,7 +30,8 @@ echo -e "${CYAN}1${RESET} ➤ Install Pterodactyl Panel"
 echo -e "${CYAN}2${RESET} ➤ Install Pterodactyl Wings"
 echo -e "${CYAN}3${RESET} ➤ Install Tailscale+UP"
 echo -e "${CYAN}4${RESET} ➤ Install HvmPanel"
-echo -e "${CYAN}5${RESET} ➤ Exit"
+echo -e "${CYAN}5${RESET} ➤ Install Cloudflare"
+echo -e "${CYAN}6${RESET} ➤ Exit"
 echo ""
 read -p "Select option [1-5] ➜" opt
 
@@ -39,7 +40,8 @@ case $opt in
   2) bash <(curl -s https://raw.githubusercontent.com/jikoz/codes/refs/heads/main/wings) ;;
   3) curl -fsSL https://tailscale.com/install.sh | sh && sudo tailscale up ;;
   4) bash <(curl -s https://raw.githubusercontent.com/jikoz/codes/refs/heads/main/hvm.sh) ;;
-  5) exit 0 ;;
+  5) bash <(curl -s https://raw.githubusercontent.com/jikoz/codes/refs/heads/main/cloudflare.sh) ;;
+  6) exit 0 ;;
   *) echo "❌ Invalid Option"
      sleep 1
     ;;
