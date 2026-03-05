@@ -1,22 +1,16 @@
 #!/usr/bin/env bash
 set -e
-# Next-Gen Neon Color Theme
+# Colors
+RESET="\e[0m"
+RED="\e[31m"
+GREEN="\e[32m"
+YELLOW="\e[33m"
+BLUE="\e[34m"
+CYAN="\e[36m"
+PURPLE="\e[35m"
+WHITE="\e[97m"
 RESET="\e[0m"
 BOLD="\e[1m"
-DIM="\e[2m"
-UNDERLINE="\e[4m"
-CYAN="\e[96m"
-BLUE="\e[94m"
-PURPLE="\e[95m"
-GREEN="\e[92m"
-YELLOW="\e[93m"
-RED="\e[91m"
-WHITE="\e[97m"
-NEON_GREEN="\e[38;5;82m"
-NEON_PURPLE="\e[38;5;165m"
-DANGER="\e[38;5;75m"
-GLOW="\e[38;5;51m"
-DANGER="\e[38;5;196m"
 clear
 cat << "EOF"
 ██╗██╗██╗  ██╗ ██████╗ ███████╗██╗   ██╗████████╗
@@ -28,11 +22,11 @@ cat << "EOF"
 EOF
 
 echo ""
-echo "${BLUE}${BOLD} 1) Install Pterodactyl Panel ${RESET}"
-echo "${BLUE}${BOLD} 2) Install Pterodactyl Wings ${RESET}"
-echo "${BLUE}${BOLD} 3) Install Tailscale+UP ${RESET}"
-echo "${BLUE}${BOLD} 4) Install HvmPamel ${RESET}"
-echo "${BLUE}${BOLD} 5) EXIT ${RESET}"
+echo "${CYAN}1${RESET} ➤ Install Pterodactyl Panel"
+echo "${CYAN}2${RESET} ➤ Install Pterodactyl Wings"
+echo "${CYAN}3${RESET} ➤ Install Tailscale+UP"
+echo "${CYAN}4${RESET} ➤ Install HvmPamel"
+echo "${RED}5${RESET} ➤ Exit"
 echo ""
 read -p "Select option [1-6]: " opt
 
