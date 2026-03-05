@@ -22,11 +22,11 @@ cat << "EOF"
 EOF
 
 echo ""
-echo "${CYAN}1${RESET} ➤ Install Pterodactyl Panel"
-echo "${CYAN}2${RESET} ➤ Install Pterodactyl Wings"
-echo "${CYAN}3${RESET} ➤ Install Tailscale+UP"
-echo "${CYAN}4${RESET} ➤ Install HvmPamel"
-echo "${RED}5${RESET} ➤ Exit"
+echo -e "${CYAN}1${RESET} ➤ Install Pterodactyl Panel"
+echo -e "${CYAN}2${RESET} ➤ Install Pterodactyl Wings"
+echo -e "${CYAN}3${RESET} ➤ Install Tailscale+UP"
+echo -e "${CYAN}4${RESET} ➤ Install HvmPamel"
+echo -e "${RED}5${RESET} ➤ Exit"
 echo ""
 read -p "Select option [1-6]: " opt
 
