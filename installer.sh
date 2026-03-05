@@ -22,7 +22,7 @@ cat << "EOF"
 EOF
 
 echo ""
-echo -e "${CYAN}1${RESET} ➤ Install Pterodactyl"
+echo -e "${CYAN}1${RESET} ➤ Install Pterodactyl Panel"
 echo -e "${CYAN}2${RESET} ➤ Install Pterodactyl Wings"
 echo -e "${CYAN}3${RESET} ➤ Install Tailscale+UP"
 echo -e "${CYAN}4${RESET} ➤ Install HvmPamel"
