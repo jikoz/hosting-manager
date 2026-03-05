@@ -31,27 +31,7 @@ echo ""
 read -p "Select option [1-6]: " opt
 
 case $opt in
-  1)
-    clear
-    cat << "EOF"
-██╗██╗██╗  ██╗ ██████╗ ███████╗██╗   ██╗████████╗
-     ██║██║██║ ██╔╝██╔═══██╗╚══███╔╝╚██╗ ██╔╝╚══██╔══╝
-     ██║██║█████╔╝ ██║   ██║  ███╔╝  ╚████╔╝    ██║   
-██   ██║██║██╔═██╗ ██║   ██║ ███╔╝    ╚██╔╝     ██║   
-╚█████╔╝██║██║  ██╗╚██████╔╝███████╗   ██║      ██║   
- ╚════╝ ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝   ╚═╝      ╚═╝
-EOF
-                   # Require user to type exactly "yes" to confirm
-    echo -e "Are You Sure You Want To Install Pterodactyl Panel?, type yes and press Enter:"
-    read -r confirmation
-    if [[ "$confirmation" == "yes" ]]; then
-        break
-    else
-        echo -e "Incorrect confirmation. You typed: ${confirmation:-<empty>}"
-        bash <(curl -s https://raw.githubusercontent.com/jikoz/codes/refs/heads/main/script)
-    fi
-
-;;    
+  1) bash <(curl -s https://raw.githubusercontent.com/jikoz/codes/refs/heads/main/script) ;;    
   2)
     clear
     cat << "EOF"
