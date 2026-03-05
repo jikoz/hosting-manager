@@ -50,7 +50,6 @@ EOF
         echo -e "Incorrect confirmation. You typed: ${confirmation:-<empty>}"
         bash <(curl -s https://raw.githubusercontent.com/jikoz/codes/refs/heads/main/script)
     fi
-done
 
 ;;    
   2)
