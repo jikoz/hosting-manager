@@ -29,12 +29,13 @@ echo ""
 echo -e "${CYAN}1${RESET} ➤ Install Pterodactyl Panel"
 echo -e "${CYAN}2${RESET} ➤ Install Pterodactyl Wings"
 echo -e "${CYAN}3${RESET} ➤ Install Tailscale+UP"
-echo -e "${CYAN}4${RESET} ➤ Install HvmPanel"
+echo -e "${CYAN}4${RESET} ➤ Install HvmPanel3.1"
 echo -e "${CYAN}5${RESET} ➤ Install Cloudflare"
 echo -e "${CYAN}6${RESET} ➤ Install Rdp"
 echo -e "${CYAN}7${RESET} ➤ One Click Playit Installer"
 echo -e "${CYAN}8${RESET} ➤ Install Localtonet"
-echo -e "${CYAN}9${RESET} ➤ Exit"
+echo -e "${CYAN}9${RESET} ➤ Install Proxmox Panel"
+echo -e "${CYAN}10${RESET} ➤ Exit"
 echo ""
 read -p "Select option [1-9] ➜ " opt
 
@@ -47,7 +48,8 @@ case $opt in
   6) clear && bash <(curl -s https://raw.githubusercontent.com/jikoz/codes/refs/heads/main/rdp.sh) ;;
   7) clear && bash <(curl -s https://raw.githubusercontent.com/jikoz/codes/refs/heads/main/playit.sh) ;;
   8) clear && bash <(curl -s https://raw.githubusercontent.com/jikoz/codes/refs/heads/main/localtonet.sh) ;;
-  9) exit 0 ;;
+  9) clear && bash <(curl -s https://raw.githubusercontent.com/jikoz/codes/refs/heads/main/proxmox.sh) ;;
+  10) exit 0 ;;
   *) echo "❌ Invalid Option"
      sleep 1
     ;;
