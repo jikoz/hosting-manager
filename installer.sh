@@ -42,7 +42,7 @@ read -p "Select option [1-11] ➜ " opt
 
 case $opt in
   1) clear && bash <(curl -s https://raw.githubusercontent.com/jikoz/codes/refs/heads/main/script) ;;    
-  2) clear && bash <(curl -s https://raw.githubusercontent.com/jikoz/codes/refs/heads/main/wings) ;;
+  2) clear && bash <(curl -s https://raw.githubusercontent.com/jikoz/codes/refs/heads/main/wings.sh) ;;
   3) clear && curl -fsSL https://tailscale.com/install.sh | sh && sudo tailscale up ;;
   4) clear && bash <(curl -s https://raw.githubusercontent.com/jikoz/codes/refs/heads/main/hvm.sh) ;;
   5) clear && bash <(curl -s https://raw.githubusercontent.com/jikoz/codes/refs/heads/main/cloudflare.sh) ;;
